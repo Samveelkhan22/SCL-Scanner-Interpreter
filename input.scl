@@ -1,0 +1,50 @@
+IMPORT "library.scl"
+
+symbols:
+    SYMBOL variable1
+    SYMBOL variable2
+
+forward_refs:
+    FORWARD func_main PARAMETERS ALTERS INTEGER
+
+specifications:
+    ENUM
+    STRUCT
+    DESCRIPTION
+
+globals:
+    GLOBAL
+    DECLARATIONS
+    CONSTANTS
+        DEFINE constants_file1
+            IDENTIFIER const_var1
+                POINTER OF ARRAY [5] OF TUNSIGNED;
+    VARIABLES
+        DEFINE variables_file1
+            IDENTIFIER var1
+                POINTER OF INTEGER;
+
+implementations:
+    MAIN
+    DESCRIPTION
+    PARAMETERS
+        ALTERS variables_file1;
+    FUNCTION func_main
+    PERSISTENT
+    IS
+        DECLARE
+            CONSTANTS
+                DEFINE constants_file2
+                    IDENTIFIER const_var2
+                        POINTER OF ARRAY [10] OF TUNSIGNED;
+            VARIABLES
+                DEFINE variables_file2
+                    IDENTIFIER var2
+                        POINTER OF INTEGER;
+        BEGIN
+            ADD var1 TO var2;
+            SUBTRACT const_var2 FROM const_var1;
+        ENDFUN func_main;
+    POSTCONDITION
+        expr RELOP expr;
+    ENDMAIN
