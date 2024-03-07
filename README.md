@@ -63,14 +63,3 @@ POSTCONDITION;
 expr RELOP expr;
 ENDMAIN
 
-## Result
-
-After running the scanner, you will see the scanned tokens and a tokens.json file containing the token details.
-
-Feel free to explore and experiment with different SCL code examples!
-
-## Contributions
-Contributions are welcome. If you find any issues or improvements, please open an issue or create a pull request.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
